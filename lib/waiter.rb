@@ -21,4 +21,16 @@ class Waiter
     Meal.all.select { |meal| meal.waiter == self }
   end
   
+  def best_tipper
+    biggest_tip = nil
+    biggest_tipper = nil
+    Meal.all.each do |meal|
+      if meal.tip > biggest_tip
+        biggest_tip = meal.tip
+        biggest_tipper = meal.customer
+      end
+    end
+    biggest_tipper
+  end
+  
 end
