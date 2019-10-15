@@ -22,7 +22,7 @@ class Waiter
   end
   
   def best_tipper
-    biggest_tip = nil
+    biggest_tip = 0
     biggest_tipper = nil
     Meal.all.each do |meal|
       if meal.tip > biggest_tip
